@@ -1,0 +1,59 @@
+name: 📋 Planning Phase
+description: Phase 2 - Create implementation plan
+title: "[PLAN] "
+labels: ["phase:plan", "status:todo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Phase 2: Planning
+
+        This issue tracks the planning phase. An agent will:
+        - Create step-by-step implementation plan
+        - Identify dependencies
+        - Estimate complexity
+        - **Output**: Plan document (context firewall)
+
+  - type: input
+    id: feature
+    attributes:
+      label: Feature Name
+      description: What feature are we planning?
+      placeholder: "e.g., User authentication system"
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: What must this feature accomplish?
+      placeholder: |
+        - User registration
+        - Login/logout
+        - Password reset
+        - Email verification
+    validations:
+      required: true
+
+  - type: input
+    id: research_issue
+    attributes:
+      label: Research Issue
+      description: Link to related research issue (optional)
+      placeholder: "#123"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: track
+    attributes:
+      label: Complexity Track
+      description: Project complexity level
+      options:
+        - Quick (simple feature)
+        - Standard (normal complexity)
+        - Enterprise (complex system)
+      default: 1
+    validations:
+      required: true

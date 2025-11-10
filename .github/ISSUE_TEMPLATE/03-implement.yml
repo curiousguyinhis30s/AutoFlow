@@ -1,0 +1,60 @@
+name: 💻 Implementation Phase
+description: Phase 3 - Implement the feature in a git worktree
+title: "[IMPLEMENT] "
+labels: ["phase:implement", "status:todo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Phase 3: Implementation
+
+        This issue tracks implementation in an isolated git worktree. An agent will:
+        - Create worktree branch
+        - Implement according to plan
+        - Commit incrementally
+        - **Output**: Working code + commits
+
+  - type: input
+    id: feature
+    attributes:
+      label: Feature Name
+      description: What are we implementing?
+      placeholder: "e.g., authentication-system"
+    validations:
+      required: true
+
+  - type: input
+    id: plan_issue
+    attributes:
+      label: Plan Issue
+      description: Link to planning issue
+      placeholder: "#124"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Implementation Tasks
+      description: Checklist of tasks (from plan)
+      placeholder: |
+        - [ ] Install dependencies
+        - [ ] Create auth middleware
+        - [ ] Implement login route
+        - [ ] Add tests
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent_type
+    attributes:
+      label: Agent Type
+      description: Which agent should handle this?
+      options:
+        - General (standard implementation)
+        - UI Specialist (design system required)
+        - API Specialist (backend/API work)
+        - Security Specialist (security-critical)
+      default: 0
+    validations:
+      required: true

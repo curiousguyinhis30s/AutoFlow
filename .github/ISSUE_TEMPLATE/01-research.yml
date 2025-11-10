@@ -1,0 +1,66 @@
+name: 🔍 Research Phase
+description: Phase 1 - Research patterns, examples, and best practices
+title: "[RESEARCH] "
+labels: ["phase:research", "status:todo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Phase 1: Research
+
+        This issue tracks the research phase for a new task. An agent will:
+        - Search knowledge base for relevant patterns
+        - Find code examples
+        - Review best practices
+        - **Output**: Summary document (context firewall)
+
+  - type: input
+    id: topic
+    attributes:
+      label: Research Topic
+      description: What should the agent research?
+      placeholder: "e.g., JWT authentication patterns"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Additional context for the research
+      placeholder: |
+        - Current system uses sessions
+        - Need to scale to microservices
+        - Must support mobile apps
+    validations:
+      required: false
+
+  - type: dropdown
+    id: track
+    attributes:
+      label: Complexity Track
+      description: How deep should the research be?
+      options:
+        - Quick (< 1 hour)
+        - Standard (1-4 hours)
+        - Enterprise (> 4 hours)
+      default: 1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: sources
+    attributes:
+      label: Research Sources
+      description: Which sources should the agent check?
+      options:
+        - label: Knowledge base (RAG)
+          checked: true
+        - label: Code examples
+          checked: true
+        - label: Documentation
+          checked: true
+        - label: GitHub repositories
+          checked: false
+        - label: Web search
+          checked: false

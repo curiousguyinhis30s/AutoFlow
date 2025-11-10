@@ -1,0 +1,20 @@
+#!/bin/bash
+# AutoFlow - Simple launcher script
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+cd /Users/samiullah/AutoFlow
+
+# Check if gh is authenticated
+if ! /opt/homebrew/bin/gh auth status &>/dev/null; then
+    echo "⚠️  GitHub CLI not authenticated."
+    echo "Run this command in your terminal:"
+    echo ""
+    echo "  /opt/homebrew/bin/gh auth login"
+    echo ""
+    echo "Then run: autoflow \"your task\""
+    exit 1
+fi
+
+# Run orchestrator
+python3 .autoflow/agents/orchestrator.py "$@"
