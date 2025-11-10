@@ -61,21 +61,41 @@ Follow prompts:
 
 ## Usage
 
+### Quick Start
+
 ```bash
-cd /Users/samiullah/AutoFlow
-./autoflow "implement user authentication"
+/Users/samiullah/AutoFlow/start-autoflow.sh "your task here"
 ```
 
-**That's it.**
+**Example:**
+```bash
+/Users/samiullah/AutoFlow/start-autoflow.sh "build a contact form with validation"
+```
 
-Claude will:
-1. Research authentication patterns
-2. Create implementation plan
-3. Write the actual code
-4. Run tests
-5. Merge to main
+### Add Global Alias (Optional)
 
-You approve 4 times (type `yes`).
+Add to `~/.zshrc`:
+```bash
+alias autoflow="/Users/samiullah/AutoFlow/start-autoflow.sh"
+```
+
+Then use:
+```bash
+autoflow "build a contact form"
+```
+
+### What Happens
+
+Claude Code will:
+1. Create GitHub Issue for tracking
+2. Research relevant patterns
+3. Create implementation plan
+4. Write the actual code
+5. Test and validate
+6. Commit and push to GitHub
+7. Close issue with summary
+
+**See:** `HOW-TO-START.md` for detailed instructions
 
 ---
 
